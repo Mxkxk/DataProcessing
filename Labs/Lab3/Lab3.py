@@ -1,5 +1,3 @@
-from tasks import TaskOne
-
 printLine = lambda len: print("+" + "-"*(len-2)+ "+")
 while True == True:
     task = 0
