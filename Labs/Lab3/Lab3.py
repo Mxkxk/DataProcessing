@@ -17,7 +17,7 @@ while True == True:
                 print("|Товар: %s\t\t|Ціна: %d\t\t|"%(i[0], i[1]))
             printLine(49)
             print("check \t- виводить ваш чек", "ok \t- завершує процес уведення товарів", sep='\n')
-        
+        #
         listOfGoods = []
         listOfGoods.append(["Banana".upper(), 20])
         listOfGoods.append(["Kiwi".upper(), 50])
@@ -73,8 +73,51 @@ while True == True:
             elif customerInput[0] == "ok":
                 break        
     elif task == 2:
-        pass
-    elif task == 3:
-        pass
+        #
+        dictStud = {}
+        dictStud["John Doe#1"] = [4, 5, 3]
+        dictStud["John Doe#2"] = [2, 4, 5, 5]
+        dictStud["John Doe#3"] = [4, 3, 1]
+        dictStud["John Doe#4"] = [5, 2, 5, 2]
+        dictStud["John Doe#5"] = [3, 2, 5, 2]
+        dictStud["John Doe#6"] = [3, 5, 5, 4]
+        #
+        duty = 0
+        dictStud_new = {}
+        for stud in dictStud:
+            mid = sum(dictStud[stud])/len(dictStud[stud])            
+            dictStud_new[stud] = mid
+            if mid < 3.0:
+                duty+=1
+        print("Кількість заборгованостей %d"%(duty))
+        for stud in dictStud_new:
+            print("Середній бал %s: %.1f"%(stud, dictStud_new[stud]))
+    elif task == 3:        
+        #
+        listDictGroup = []
+        listDictGroup.append({"surname":"Doe#1", "name":"Jane", "marks":[5, 1, 4]})
+        listDictGroup.append({"surname":"Doe#2", "name":"Jake", "marks":[3, 4, 2]})
+        listDictGroup.append({"surname":"Doe#3", "name":"John", "marks":[5, 3, 2]})
+        listDictGroup.append({"surname":"Doe#4", "name":"Jiah", "marks":[4, 2, 5]})
+        listDictGroup.append({"surname":"Doe#5", "name":"Jeera", "marks":[2, 5, 4]})
+        #2
+        print(listDictGroup[0])
+        #3
+        for i in listDictGroup:
+            print(i["surname"].ljust(10), i["name"].ljust(8), i["marks"])
+        #4|5
+        listMidMarks = []
+        for i in listDictGroup:
+            listMidMarks.append([i["surname"], sum(i["marks"])/len(i["marks"])])
+        #6
+        listSurnames = []
+        for i in listDictGroup:
+            listSurnames.append(i["surname"])
+        #7
+        allMidMark = 0
+        for i in listMidMarks:
+            allMidMark += i[1]        
+        allMidMark /= len(listMidMarks)
+        print("Середня оцінка %.1f"%(allMidMark))
     elif task == -1:
         break
