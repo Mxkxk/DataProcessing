@@ -3,7 +3,9 @@ import os
 
 vClearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 vLineSpacer = lambda sSpacerText: print('-' * 10 + str(sSpacerText) + '-' * 10 )
-sHelp = open("help.txt", "r")
+fsHelp = open("help.txt", "r")
+sHelp = fsHelp.read()
+fsHelp.close()
 iTask = 0
 iAmmounOfTasks = lambda : 5
 
@@ -19,7 +21,7 @@ while True == True:
 	sChangeTask = input("Виберіть завдання:")
 	sChangeTask = str.lower(sChangeTask)
 	if sChangeTask == "h" or sChangeTask == "help":
-		print(sHelp.read())
+		print(sHelp)
 	elif sChangeTask == "end" or sChangeTask == "close" or sChangeTask == "n":		
 		break
 	elif sChangeTask == "clear" or sChangeTask == "clr":
@@ -82,9 +84,9 @@ while True == True:
 		vLineSpacer("Кінець третього завдання")
 ## Основне завдання
 	elif iTask == 4:
-		#sInputedComand - ввделена послідовність команд		
+		#sInputedComand - ввделена послідовність команд
 		vLineSpacer("Основне завдання")		
-		List = None
+		List = []
 		isCreatedList = False
 		#константа кількості пунктів меню
 		iAmmounOfTasksTask4 = lambda : 6
@@ -139,14 +141,17 @@ while True == True:
 					print("Не правильне значення")
 			###6
 			elif sInputedComand == 6:
-				try:					
-					iDeletedIndex = int(input("Введіть індекст елементу для видалення: "))
-					if iDeletedIndex >= 0 and iDeletedIndex < len(List):
-						del List[iDeletedIndex]
-					else:
-						print("Некоректний індекс")
-				except ValueError:
-					print("Не правильне значення")
+				if len(List) > 0:
+					try:
+						iDeletedIndex = int(input("Введіть індекст елементу для видалення: "))
+						if iDeletedIndex >= 0 and iDeletedIndex < len(List):
+							del List[iDeletedIndex]
+						else:
+							print("Некоректний індекс")
+					except ValueError:
+						print("Не правильне значення")
+				else:
+					print("Список не створено...")
 ### П'яте завдання
 	elif iTask == 5:
 		vLineSpacer("П'яте завдання")		
@@ -193,4 +198,3 @@ while True == True:
 		vLineSpacer("Кінець п'ятого завдання")
 ###	
 	iTask = 0
-sHelp.close()
