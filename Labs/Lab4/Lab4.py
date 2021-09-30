@@ -77,8 +77,13 @@ printLine(14)
 for i in matrFourteenth:
 	print(i)
 #15
-height = 5
-matrFourteenth = [[1 if j%2 == 0 and i%2 == 0 else 0 for j in range(5)] for i in range(height)]
-printLine(14)
-for i in matrFourteenth:
+height = 7
+matrFifteenth = [[1 if i == j or j == (height-i-1) else 0 for j in range(height) ] for i in range(height)]
+printLine(15)
+outputMatrix(matrFifteenth, " ", height)
+#16
+height = 4
+matrSixteenth = [[(j-1)%2 if i<j else (i-1)%2 for j in range(height+1, 1, -1) ] for i in range(height+1, 1, -1)]
+printLine(16)
+for i in matrSixteenth:
 	print(i)
