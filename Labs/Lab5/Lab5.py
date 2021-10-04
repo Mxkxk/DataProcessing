@@ -26,13 +26,16 @@ dSomeDict_new = {dSomeDict_old[k]:k for k in dSomeDict_old}
 print(dSomeDict_new)
 printLine(1.2)
 #1.2
-tStudentsSurnames = tuple(("Doe#"+str(i+1) for i in range(20)))
-tRandomNumbers = tuple((randint(1, 100) for i in range(len(tStudentsSurnames))))
-print(tStudentsSurnames)
-print(tRandomNumbers)
+tStudentsSurnames = tuple(["Doe#"+str(i+1) for i in range(20)])
+tRandomNumbers = iter(tuple([randint(1, 100) for i in range(len(tStudentsSurnames))]))
+dStudentMarks = {stud:next(tRandomNumbers) for stud in tStudentsSurnames }
+print(dStudentMarks)
 printLine(1.3)
-#1.3
-
+#1.3 - [0, 1]
+def permutation01():
+	sSymbols = list("01")
+	return []
+permutation01()
 printLine(1.4)
 #1.4
 sText = open("text1_4.txt", "r").read()
