@@ -10,4 +10,9 @@ print("Площа прямокутного трикутника:"+str(eTriangle.
 
 #2
 currency = CurrencyTrading()
-print(currency.trade("USD", "UAH", 1000))
+print(currency.trade("USD", "EUR", 1))
+print(currency.trade("USD", "UAH", 1))
+print(currency.trade("UAH", "USD", currency.trade("USD", "UAH", 1)[1]))
+print(currency.trade("UAH", "UAH", 1))
+print(currency.trade("UAH", "RUB", -20))
+print(currency.trade("UAH", "EUR", 28))
