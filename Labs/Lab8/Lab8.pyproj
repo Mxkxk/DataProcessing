@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Lab8.py" />
+    <Compile Include="Student.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Triangle.py">
       <SubType>Code</SubType>
     </Compile>

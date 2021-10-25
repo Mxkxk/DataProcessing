@@ -30,7 +30,3 @@ class CurrencyTrading(object):
                 return ["Wrong ammount of money", -1]
         else:
             return ["Wrong currency" if (curr_from != curr_to) else "Currencies must be different" , -1]
-        
-
-
-
