@@ -20,6 +20,8 @@ print("Студент з найбільшою сумою: %s"%(list(data.loc[dat
 print(data.loc[data["Sum"] == 0])
 print(data.loc[data["Sum"] > 15])
 print("Кількість студентів з сумою балів більше 15: %d"%(len(data.loc[data["Sum"] > 15])))
+data = data.sort_values("Sum")
+print(data)
 print(data[data["Lab1"].isin([2])])
 data["Lab4"] = 2
 print(data)
